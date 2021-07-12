@@ -22,7 +22,7 @@ spec:
         kubernetes.io/os: linux
       containers:
       - name: aks-gitops-demo
-        image: arck8sconformance.azurecr.io/samples/demo:v0.1.0
+        image: mcr.microsoft.com/mslearn/samples/contoso-website
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
