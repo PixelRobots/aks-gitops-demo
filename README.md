@@ -1,6 +1,6 @@
 # Cluster configuration sample for GitOps on AKS
 
-This repository contains sample Kubernetes manifest files that can be deployed using GitOps to an Azure Kubernetes Service (AKS)cluster. This repo is based on the [arc-k8s-demo](https://github.com/Azure/arc-k8s-demo) from Microsoft.
+This repository contains sample Kubernetes manifest files that can be deployed using GitOps to an Azure Kubernetes Service (AKS) cluster. This repo is based on the [arc-k8s-demo](https://github.com/Azure/arc-k8s-demo) from Microsoft.
 
 ## Contents
 
@@ -13,7 +13,7 @@ This repository contains sample Kubernetes manifest files that can be deployed u
 
 ## Prerequisites
 
-One or more AKS clusters with the GitOps AKS add-on enabled.
+One or more AKS clusters with the GitOps AKS add-on enabled. \
 The `connectedk8s` Azure CLI extension installed.
 
 ## Running the sample
@@ -28,6 +28,7 @@ az k8sconfiguration create \
     --cluster-name ${CLUSTER_NAME} --resource-group ${RESOURCE_GROUP} \
     --operator-instance-name cluster-config --operator-namespace cluster-config \
     --repository-url https://github.com/PixelRobots/aks-gitops-demo \
-    --scope cluster --cluster-type managedClusters
+    --scope cluster --cluster-type managedClusters \
+    --operator-params='--git-branch=main'
 ```
 
