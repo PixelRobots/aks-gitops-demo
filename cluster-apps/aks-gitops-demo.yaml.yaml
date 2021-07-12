@@ -22,10 +22,13 @@ spec:
         kubernetes.io/os: linux
       containers:
       - name: aks-gitops-demo
-        image: mcr.microsoft.com/mslearn/samples/contoso-website
+        image: kodekloud/webapp-color
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
+        env:
+        - name: APP_COLOR
+          value: yellow
         resources:
           requests:
             memory: "50Mi"
