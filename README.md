@@ -14,16 +14,24 @@ This repository contains sample Kubernetes manifest files that can be deployed u
 ## Prerequisites
 
 One or more AKS clusters with the GitOps AKS add-on enabled. \
-The `connectedk8s` Azure CLI extension installed.
+The `k8s-configuration` Azure CLI extension installed. \
+The below resource providers registered:
+
+```console
+az provider register --namespace Microsoft.Kubernetes
+az provider register --namespace Microsoft.KubernetesConfiguration
+az provider register --namespace Microsoft.ExtendedLocation
+```
+
 
 ## Running the sample
 
-Create a GitOps configuration referencing this sample repo by using the Azure CLI extension `k8sconfiguration`. Complete documentation on the available options can be found [here](https://pixelrobots.co.uk).
+Create a GitOps configuration referencing this sample repo by using the Azure CLI extension `k8s-configuration`. Complete documentation on the available options can be found [here](https://pixelrobots.co.uk).
 
 After a configuration is created, AKS will instantiate the resources described in this repository. This includes creating namespaces, deploying an example workload, and a config map.
 
 ```console
-az k8sconfiguration create \
+az k8s-configuration create \
     --name cluster-config \
     --cluster-name ${CLUSTER_NAME} --resource-group ${RESOURCE_GROUP} \
     --operator-instance-name cluster-config --operator-namespace cluster-config \
