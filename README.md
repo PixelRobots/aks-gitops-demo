@@ -14,7 +14,7 @@ This repository contains sample Kubernetes manifest files that can be deployed u
 ## Prerequisites
 
 One or more AKS clusters with the GitOps AKS add-on enabled. \
-The `connectedk8s` Azure CLI extension installed.
+The `k8s-configuration` Azure CLI extension installed.
 
 ## Running the sample
 
